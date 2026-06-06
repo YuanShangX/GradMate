@@ -1,0 +1,60 @@
+{
+  "pages": [
+    "pages/login/login",
+    "pages/school/index",
+    "pages/school/search",
+    "pages/school/calendar",
+    "pages/school/list",
+    "pages/school/detail",
+    "pages/school/assistant",
+    "pages/school/compare",
+    "pages/school/select",
+    "pages/major/search",
+    "pages/major/detail",
+    "pages/major/schoolDetail",
+    "pages/major/compare",
+    "pages/major/select",
+    "pages/info/index",
+    "pages/study/tasklist",
+    "pages/study/calendar",
+    "pages/study/stats",
+    "pages/study/record",
+    "pages/study/focus",
+    "pages/ai/chat",
+    "pages/profile/profile",
+    "pages/profile/edit",
+    "pages/profile/target",
+    "pages/profile/favorite"
+  ],
+  "window": {
+    "navigationBarTextStyle": "white",
+    "navigationBarTitleText": "GradMate考研助手",
+    "navigationBarBackgroundColor": "#4A90E2",
+    "backgroundColor": "#F5F5F5"
+  },
+  "tabBar": {
+    "color": "#7A7E83",
+    "selectedColor": "#4A90E2",
+    "borderStyle": "black",
+    "backgroundColor": "#FFFFFF",
+    "list": [
+      {
+        "pagePath": "pages/school/index",
+        "text": "校院库"
+      },
+      {
+        "pagePath": "pages/study/tasklist",
+        "text": "ToDo清单"
+      },
+      {
+        "pagePath": "pages/ai/chat",
+        "text": "研小伴"
+      },
+      {
+        "pagePath": "pages/profile/profile",
+        "text": "个人中心"
+      }
+    ]
+  },
+  "usingComponents": {}
+}

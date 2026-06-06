@@ -1,0 +1,247 @@
+
+.search-page.data-v-55e16762 {
+	min-height: 100vh;
+	background-color: #FFFFFF;
+}
+
+/* 搜索栏 */
+.search-bar.data-v-55e16762 {
+	display: flex;
+	align-items: center;
+	padding: 16rpx 32rpx;
+	background-color: #FFFFFF;
+	gap: 20rpx;
+	border-bottom: 1rpx solid #F0F0F0;
+}
+.search-input-box.data-v-55e16762 {
+	flex: 1;
+	display: flex;
+	align-items: center;
+	background-color: #F5F5F5;
+	border-radius: 8rpx;
+	padding: 16rpx 28rpx;
+}
+.search-icon.data-v-55e16762 {
+	width: 32rpx;
+	height: 32rpx;
+	margin-right: 12rpx;
+}
+.search-input.data-v-55e16762 {
+	flex: 1;
+	font-size: 28rpx;
+	color: #333;
+}
+.clear-icon.data-v-55e16762 {
+	width: 32rpx;
+	height: 32rpx;
+	margin-left: 12rpx;
+}
+.cancel-btn.data-v-55e16762 {
+	font-size: 28rpx;
+	color: #1E88E5;
+}
+
+/* 默认内容 */
+.default-content.data-v-55e16762 {
+	padding: 32rpx;
+}
+.section.data-v-55e16762 {
+	margin-bottom: 32rpx;
+}
+.section-title.data-v-55e16762 {
+	font-size: 32rpx;
+	font-weight: bold;
+	color: #333;
+	margin-bottom: 24rpx;
+	display: block;
+}
+.tag-list.data-v-55e16762 {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 20rpx;
+}
+.tag-item.data-v-55e16762 {
+	background-color: #F5F5F5;
+	border-radius: 8rpx;
+	padding: 16rpx 32rpx;
+}
+.tag-text.data-v-55e16762 {
+	font-size: 26rpx;
+	color: #666;
+}
+
+/* 资讯区域 */
+.info-section.data-v-55e16762 {
+	display: flex;
+	gap: 20rpx;
+}
+.info-card.data-v-55e16762 {
+	flex: 1;
+	background-color: #F8F8F8;
+	border-radius: 12rpx;
+	padding: 24rpx;
+}
+.hot-info.data-v-55e16762 {
+	background-color: #FFF5F5;
+}
+.hot-school.data-v-55e16762 {
+	background-color: #F0F8FF;
+}
+.card-header.data-v-55e16762 {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-bottom: 20rpx;
+}
+.card-title.data-v-55e16762 {
+	font-size: 28rpx;
+	font-weight: bold;
+	color: #333;
+}
+.more-icon.data-v-55e16762 {
+	font-size: 36rpx;
+	color: #999;
+}
+.info-list.data-v-55e16762 {
+	display: flex;
+	flex-direction: column;
+	gap: 16rpx;
+}
+.info-item.data-v-55e16762 {
+	display: flex;
+	align-items: center;
+	gap: 12rpx;
+}
+.info-rank.data-v-55e16762 {
+	width: 36rpx;
+	height: 36rpx;
+	background-color: #E8E8E8;
+	border-radius: 6rpx;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 22rpx;
+	color: #999;
+	flex-shrink: 0;
+	text-align: center;
+	line-height: 36rpx;
+}
+.info-rank.top.data-v-55e16762 {
+	background: linear-gradient(135deg, #FF6B6B 0%, #FF5252 100%);
+	color: #FFFFFF;
+	font-weight: bold;
+}
+.info-text.data-v-55e16762 {
+	font-size: 24rpx;
+	color: #666;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+/* 搜索结果 */
+.result-content.data-v-55e16762 {
+	display: flex;
+	flex-direction: column;
+	height: calc(100vh - 100rpx);
+}
+.result-tabs.data-v-55e16762 {
+	display: flex;
+	background-color: #FFFFFF;
+	padding: 0 32rpx;
+}
+.tab-item.data-v-55e16762 {
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding: 28rpx 0;
+	position: relative;
+}
+.tab-text.data-v-55e16762 {
+	font-size: 30rpx;
+	color: #666;
+}
+.tab-item.active .tab-text.data-v-55e16762 {
+	color: #1E88E5;
+	font-weight: bold;
+}
+.tab-line.data-v-55e16762 {
+	position: absolute;
+	bottom: 0;
+	width: 60rpx;
+	height: 6rpx;
+	background-color: #1E88E5;
+	border-radius: 3rpx;
+}
+.result-list.data-v-55e16762 {
+	flex: 1;
+	padding: 24rpx 32rpx;
+	background-color: #F8F8F8;
+}
+.result-item.data-v-55e16762 {
+	display: flex;
+	align-items: center;
+	background-color: #FFFFFF;
+	border-radius: 12rpx;
+	padding: 28rpx 24rpx;
+	margin-bottom: 20rpx;
+	gap: 24rpx;
+}
+.school-logo.data-v-55e16762 {
+	width: 96rpx;
+	height: 96rpx;
+	border-radius: 12rpx;
+	flex-shrink: 0;
+}
+.school-info.data-v-55e16762 {
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+	gap: 8rpx;
+}
+.school-name.data-v-55e16762 {
+	font-size: 30rpx;
+	font-weight: bold;
+	color: #333;
+}
+.school-tag.data-v-55e16762 {
+	font-size: 24rpx;
+	color: #999;
+}
+.major-item.data-v-55e16762 {
+	padding: 32rpx 24rpx;
+}
+.major-info.data-v-55e16762 {
+	display: flex;
+	flex-direction: column;
+	gap: 12rpx;
+}
+.major-name.data-v-55e16762 {
+	font-size: 30rpx;
+	font-weight: bold;
+	color: #333;
+}
+.major-school.data-v-55e16762 {
+	font-size: 26rpx;
+	color: #999;
+}
+
+/* 空状态 */
+.empty-state.data-v-55e16762 {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	padding: 120rpx 0;
+}
+.empty-icon.data-v-55e16762 {
+	width: 200rpx;
+	height: 200rpx;
+	margin-bottom: 32rpx;
+	opacity: 0.5;
+}
+.empty-text.data-v-55e16762 {
+	font-size: 28rpx;
+	color: #999;
+}

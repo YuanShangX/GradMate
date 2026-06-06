@@ -1,0 +1,141 @@
+
+.markdown-body.data-v-113eb076 {
+	line-height: 1.8;
+	word-wrap: break-word;
+	width: 100%;
+	box-sizing: border-box;
+}
+.markdown-block.data-v-113eb076 {
+	margin-bottom: 8rpx;
+}
+
+/* 标题样式 */
+.h1.data-v-113eb076 {
+	font-size: 32rpx;
+	font-weight: 600;
+	color: #1a1a1a;
+	display: block;
+	margin: 20rpx 0 16rpx;
+	padding-bottom: 8rpx;
+	border-bottom: 1rpx solid #e0e0e0;
+}
+.h2.data-v-113eb076 {
+	font-size: 30rpx;
+	font-weight: 600;
+	color: #2a2a2a;
+	display: block;
+	margin: 18rpx 0 14rpx;
+}
+.h3.data-v-113eb076 {
+	font-size: 29rpx;
+	font-weight: 600;
+	color: #3a3a3a;
+	display: block;
+	margin: 16rpx 0 12rpx;
+}
+
+/* 代码块样式 */
+.code-block.data-v-113eb076 {
+	background: #f6f8fa;
+	border: 1rpx solid #e1e4e8;
+	border-radius: 8rpx;
+	padding: 16rpx;
+	margin: 12rpx 0;
+	overflow-x: auto;
+}
+.code-text.data-v-113eb076 {
+	font-family: 'Courier New', Courier, monospace;
+	font-size: 24rpx;
+	color: #24292e;
+	line-height: 1.6;
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+/* 列表样式 */
+.list-item.data-v-113eb076 {
+	margin: 4rpx 0;
+	padding-left: 16rpx;
+}
+.list-text.data-v-113eb076 {
+	color: #333;
+	line-height: 1.8;
+	font-size: 32rpx;
+}
+.list-bullet.data-v-113eb076 {
+	color: #5b8ff9;
+	font-weight: 600;
+}
+.list-number.data-v-113eb076 {
+	color: #5b8ff9;
+	font-weight: 600;
+}
+
+/* 空行间距 */
+.space-block.data-v-113eb076 {
+	height: 12rpx;
+}
+
+/* 段落样式 */
+.paragraph.data-v-113eb076 {
+	margin: 6rpx 0;
+	line-height: 1.8;
+}
+.normal-text.data-v-113eb076 {
+	color: #333;
+	font-size: 32rpx;
+}
+
+/* 行内代码样式 */
+.inline-code.data-v-113eb076 {
+	background: #f0f0f0;
+	color: #e83e8c;
+	padding: 2rpx 8rpx;
+	border-radius: 6rpx;
+	font-family: 'Courier New', Courier, monospace;
+	font-size: 28rpx;
+}
+
+/* 数学公式样式 */
+.math-inline.data-v-113eb076 {
+	background: #fff8e1;
+	color: #d84315;
+	padding: 2rpx 8rpx;
+	border-radius: 6rpx;
+	font-family: 'Times New Roman', serif;
+	font-size: 28rpx;
+	font-style: italic;
+}
+.math-block.data-v-113eb076 {
+	background: #fff8e1;
+	color: #d84315;
+	padding: 8rpx 12rpx;
+	border-radius: 8rpx;
+	font-family: 'Times New Roman', serif;
+	font-size: 28rpx;
+	font-style: italic;
+	display: block;
+	margin: 8rpx 0;
+	text-align: center;
+}
+
+/* 粗体样式 */
+.bold.data-v-113eb076 {
+	font-weight: 600;
+	color: #1a1a1a;
+	font-size: 32rpx;
+}
+
+/* 斜体样式 */
+.italic.data-v-113eb076 {
+	font-style: italic;
+	color: #4a4a4a;
+	font-size: 32rpx;
+}
+
+/* 链接样式 */
+.link.data-v-113eb076 {
+	color: #0366d6;
+	text-decoration: underline;
+	font-size: 32rpx;
+}

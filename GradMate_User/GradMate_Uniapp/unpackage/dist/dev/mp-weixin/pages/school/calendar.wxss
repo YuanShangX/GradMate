@@ -1,0 +1,228 @@
+
+.page.data-v-dd6d9ddf {
+	min-height: 100vh;
+	background: #f6f7fb;
+}
+
+/* 导航栏 */
+.navbar.data-v-dd6d9ddf {
+	background: #ffffff;
+	padding: 20rpx 30rpx;
+	display: flex;
+	align-items: center;
+	position: relative;
+}
+.nav-back.data-v-dd6d9ddf {
+	width: 48rpx;
+	height: 48rpx;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.back-icon.data-v-dd6d9ddf {
+	font-size: 48rpx;
+	color: #333;
+	font-weight: bold;
+}
+.nav-title.data-v-dd6d9ddf {
+	position: absolute;
+	left: 50%;
+	transform: translateX(-50%);
+	font-size: 32rpx;
+	font-weight: 600;
+	color: #006bff;
+}
+
+/* 标签页 */
+.tabs.data-v-dd6d9ddf {
+	background: #ffffff;
+	display: flex;
+	padding: 0 30rpx;
+}
+.tab-item.data-v-dd6d9ddf {
+	flex: 1;
+	padding: 24rpx 0;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	position: relative;
+}
+.tab-text.data-v-dd6d9ddf {
+	font-size: 28rpx;
+	color: #666;
+}
+.tab-item.active .tab-text.data-v-dd6d9ddf {
+	color: #006bff;
+	font-weight: 600;
+}
+.tab-line.data-v-dd6d9ddf {
+	position: absolute;
+	bottom: 0;
+	width: 60rpx;
+	height: 4rpx;
+	background: #006bff;
+	border-radius: 2rpx;
+}
+
+/* 内容区 */
+.content.data-v-dd6d9ddf {
+	height: calc(100vh - 160rpx);
+	padding: 24rpx 30rpx;
+	box-sizing: border-box;
+}
+
+/* 时间线内容 */
+.timeline-content.data-v-dd6d9ddf {
+	padding-top: 20rpx;
+}
+
+/* 年份标题 */
+.year-section.data-v-dd6d9ddf {
+	margin-bottom: 40rpx;
+}
+.year-title.data-v-dd6d9ddf {
+	display: flex;
+	align-items: center;
+	gap: 12rpx;
+	margin-bottom: 24rpx;
+}
+.year-dot.data-v-dd6d9ddf {
+	width: 16rpx;
+	height: 16rpx;
+	background: #ff9500;
+	border-radius: 50%;
+}
+.year-text.data-v-dd6d9ddf {
+	font-size: 28rpx;
+	font-weight: 600;
+	color: #333;
+}
+
+/* 时间线项 */
+.timeline-item.data-v-dd6d9ddf {
+	display: flex;
+	margin-bottom: 32rpx;
+	gap: 12rpx;
+}
+.item-left.data-v-dd6d9ddf {
+	width: 40rpx;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	flex-shrink: 0;
+}
+.item-dot.data-v-dd6d9ddf {
+	width: 16rpx;
+	height: 16rpx;
+	background: #e5e5e5;
+	border-radius: 50%;
+	margin-top: 8rpx;
+}
+.item-line.data-v-dd6d9ddf {
+	width: 2rpx;
+	flex: 1;
+	background: #e5e5e5;
+	margin-top: 8rpx;
+}
+.item-content.data-v-dd6d9ddf {
+	flex: 1;
+	background: #ffffff;
+	border-radius: 12rpx;
+	padding: 20rpx;
+	min-width: 0;
+	box-sizing: border-box;
+}
+.item-header.data-v-dd6d9ddf {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-bottom: 8rpx;
+}
+.item-title.data-v-dd6d9ddf {
+	font-size: 28rpx;
+	font-weight: 600;
+	color: #333;
+}
+.item-link-text.data-v-dd6d9ddf {
+	font-size: 24rpx;
+	color: #999;
+}
+.item-desc.data-v-dd6d9ddf {
+	font-size: 24rpx;
+	color: #999;
+}
+
+/* 考试科目 */
+.subject-content.data-v-dd6d9ddf {
+	padding-top: 20rpx;
+}
+.subject-item.data-v-dd6d9ddf {
+	display: flex;
+	align-items: center;
+	background: #ffffff;
+	border-radius: 12rpx;
+	padding: 24rpx 20rpx;
+	margin-bottom: 16rpx;
+}
+.subject-left.data-v-dd6d9ddf {
+	width: 40rpx;
+	display: flex;
+	justify-content: center;
+}
+.subject-dot.data-v-dd6d9ddf {
+	width: 12rpx;
+	height: 12rpx;
+	background: #e5e5e5;
+	border-radius: 50%;
+}
+.subject-info.data-v-dd6d9ddf {
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+	gap: 8rpx;
+}
+.subject-name.data-v-dd6d9ddf {
+	font-size: 28rpx;
+	font-weight: 500;
+	color: #333;
+}
+.subject-date.data-v-dd6d9ddf {
+	font-size: 24rpx;
+	color: #999;
+}
+.subject-right.data-v-dd6d9ddf {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-end;
+	gap: 8rpx;
+}
+.subject-time.data-v-dd6d9ddf {
+	font-size: 26rpx;
+	color: #333;
+}
+.subject-label.data-v-dd6d9ddf {
+	font-size: 22rpx;
+	color: #999;
+}
+
+/* 调剂内容 */
+.adjust-content.data-v-dd6d9ddf {
+	padding-top: 20rpx;
+}
+.adjust-notice.data-v-dd6d9ddf {
+	background: #fff5e6;
+	border-radius: 12rpx;
+	padding: 16rpx 20rpx;
+	display: flex;
+	align-items: center;
+	gap: 12rpx;
+	margin-bottom: 24rpx;
+}
+.notice-icon.data-v-dd6d9ddf {
+	font-size: 32rpx;
+}
+.notice-text.data-v-dd6d9ddf {
+	flex: 1;
+	font-size: 24rpx;
+	color: #ff9500;
+}

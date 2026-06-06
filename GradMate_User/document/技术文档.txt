@@ -1,0 +1,633 @@
+# GradMate 考研助手 - 技术文档
+
+## 📋 项目概述
+
+GradMate 是一款基于前后端分离架构的考研助手应用，采用 uni-app 跨平台前端框架和 Spring Boot 后端框架，支持微信小程序、H5 和 APP 多端部署。
+
+---
+
+## 🏗️ 技术架构
+
+### 整体架构
+```
+┌─────────────────────────────────────────┐
+│           前端层 (uni-app)              │
+│  ┌──────────┬──────────┬──────────┐    │
+│  │ 微信小程序 │   H5     │   APP    │    │
+│  └──────────┴──────────┴──────────┘    │
+└─────────────────────────────────────────┘
+                    ↓ HTTP/HTTPS
+┌─────────────────────────────────────────┐
+│         后端层 (Spring Boot)            │
+│  ┌──────────────────────────────────┐  │
+│  │      RESTful API 接口层          │  │
+│  ├──────────────────────────────────┤  │
+│  │      业务逻辑层 (Service)        │  │
+│  ├──────────────────────────────────┤  │
+│  │    数据访问层 (MyBatis Plus)     │  │
+│  └──────────────────────────────────┘  │
+└─────────────────────────────────────────┘
+                    ↓ JDBC
+┌─────────────────────────────────────────┐
+│          数据层 (MySQL)                 │
+└─────────────────────────────────────────┘
+                    ↓ API
+┌─────────────────────────────────────────┐
+│       AI 服务 (火山引擎 Doubao)         │
+└─────────────────────────────────────────┘
+```
+
+---
+
+## 💻 前端技术栈
+
+### 核心框架
+- **uni-app 3.x**：跨平台应用开发框架
+- **Vue 3**：渐进式 JavaScript 框架
+- **Composition API**：Vue 3 组合式 API
+
+### 开发语言
+- **JavaScript/ES6+**：主要开发语言
+- **HTML5**：页面结构
+- **CSS3/SCSS**：样式设计
+
+### UI 组件
+- **uni-app 内置组件**：view、text、image、scroll-view 等
+- **自定义组件**：Countdown、MarkdownText 等
+
+### 状态管理
+- **uni.getStorageSync/setStorageSync**：本地数据持久化
+- **Vue 3 Reactive**：响应式数据管理
+
+### 网络请求
+- **uni.request**：统一网络请求封装
+- **RESTful API**：前后端接口规范
+- **Promise/Async-Await**：异步处理
+
+### 工具库
+- **自定义 request.js**：网络请求封装
+- **uni-app API**：跨平台 API 调用
+
+### 平台适配
+- **微信小程序**：mp-weixin
+- **H5**：浏览器端
+- **APP**：iOS/Android 原生应用
+
+---
+
+## 🔧 后端技术栈
+
+### 核心框架
+- **Spring Boot 3.2.2**：企业级应用开发框架
+- **Spring Web**：Web 应用开发
+- **Spring JDBC**：数据库连接
+
+### 开发语言
+- **Java 17**：主要开发语言
+- **Maven**：项目构建和依赖管理
+
+### 数据库
+- **MySQL 8.x**：关系型数据库
+- **MyBatis Plus 3.5.7**：持久层框架
+  - 代码生成器
+  - 条件构造器
+  - 分页插件
+  - 自动填充
+
+### AI 集成
+- **LangChain4j 0.35.0**：Java AI 应用开发框架
+- **火山引擎 Doubao**：大语言模型服务
+- **volcengine-java-sdk-ark-runtime 1.0.9**：火山引擎 SDK
+
+### 工具库
+- **Lombok**：简化 Java 代码
+  - @Data：自动生成 getter/setter
+  - @Builder：构建者模式
+  - @Slf4j：日志注解
+- **Hutool 5.8.32**：Java 工具类库
+  - 字符串工具
+  - 日期工具
+  - 加密工具
+  - HTTP 工具
+
+### 接口规范
+- **RESTful API**：统一接口设计
+- **JSON**：数据交换格式
+- **统一响应格式**：
+  ```json
+  {
+    "code": 200,
+    "message": "success",
+    "data": {}
+  }
+  ```
+
+---
+
+## 🗄️ 数据库设计
+
+### 数据库类型
+- **MySQL 8.x**：主数据库
+
+### 核心数据表
+
+#### 用户相关
+- **user**：用户基本信息表
+  - id, username, password, nickname, phone
+  - targetSchool, targetMajor, targetSchoolId, targetMajorId
+  - createTime, updateTime
+
+#### 院校相关
+- **school**：院校信息表
+  - id, schoolName, location, subordinate, logo, link
+  - is985, is211, isSyl, isZhx
+  - createTime, updateTime
+
+#### 专业相关
+- **major**：专业信息表
+  - id, majorCode, majorName, degreeType
+  - researchDirection, examSubject
+  - createTime, updateTime
+
+- **school_major**：院校-专业关联表
+  - id, schoolId, schoolName, majorId, majorCode, majorName
+  - studyMode, examType, department
+  - plannedEnrollment, admissionScore
+  - createTime, updateTime
+
+#### 资讯相关
+- **brochure**：招生简章表
+  - id, schoolId, schoolName, title, url, publishDate
+  - createTime, updateTime
+
+- **information**：校园资讯表
+  - id, schoolId, schoolName, title, url, publishDate
+  - createTime, updateTime
+
+- **adjust**：调剂通知表
+  - id, schoolId, schoolName, title, url, publishDate
+  - createTime, updateTime
+
+#### 学习相关
+- **todo**：待办任务表
+  - id, userId, title, description
+  - subject, priority, dueDate, completed
+  - createTime, updateTime
+
+- **study_record**：学习记录表
+  - id, userId, taskId, taskName
+  - duration, studyDate
+  - createTime, updateTime
+
+#### 收藏相关
+- **favorite**：收藏表
+  - id, userId, type, targetId, targetName, metadata
+  - createTime, updateTime
+
+---
+
+## 🎨 UI 设计规范
+
+### 设计系统
+
+#### 颜色规范
+- **主色调**：#006cff（品牌蓝）
+- **渐变色**：
+  - 蓝色渐变：#378cff → #1b7dff
+  - 橙色渐变：#ffb84d → #ff9500
+  - 紫色渐变：#a78bfa → #8b5cf6
+  - 绿色渐变：#52c990 → #00a870
+- **背景色**：
+  - 主背景：#f6f7fb
+  - 渐变背景：#e8f3ff → #f6f7fb
+  - 卡片背景：#ffffff → #f8fbff
+- **文字颜色**：
+  - 主文字：#333
+  - 次要文字：#666
+  - 辅助文字：#999
+
+#### 圆角规范
+- **大圆角**：32rpx（页面顶部）
+- **中圆角**：16rpx（卡片）
+- **小圆角**：12rpx（按钮、输入框）
+- **圆形**：50%（头像、图标）
+
+#### 阴影规范
+- **轻阴影**：0 2rpx 8rpx rgba(0, 107, 255, 0.08)
+- **中阴影**：0 4rpx 12rpx rgba(0, 107, 255, 0.08)
+- **重阴影**：0 8rpx 20rpx rgba(0, 107, 255, 0.3)
+
+#### 间距规范
+- **页面边距**：30rpx
+- **卡片间距**：24rpx
+- **元素间距**：16rpx
+- **小间距**：8rpx
+
+#### 字体规范
+- **大标题**：48-56rpx
+- **标题**：32-36rpx
+- **正文**：28rpx
+- **辅助文字**：24rpx
+- **小文字**：22rpx
+
+### 组件设计
+
+#### 导航栏
+- 高度：88rpx + 状态栏高度
+- 背景：#006cff 或 #ffffff
+- 返回按钮：左侧
+- 标题：居中
+
+#### 卡片
+- 背景：渐变白色
+- 圆角：16rpx
+- 阴影：轻阴影
+- 边框：1rpx solid rgba(0, 107, 255, 0.05)
+
+#### 按钮
+- 主按钮：蓝色渐变，圆角 44rpx
+- 次要按钮：淡蓝色背景，圆角 44rpx
+- 禁用状态：灰色渐变
+
+#### 输入框
+- 高度：80rpx
+- 背景：渐变淡蓝色
+- 圆角：50rpx
+- 边框：2rpx solid rgba(0, 107, 255, 0.1)
+
+---
+
+## 🔌 API 接口设计
+
+### 接口规范
+
+#### 请求格式
+- **Base URL**：`http://localhost:9090/api`
+- **Content-Type**：application/json
+- **请求方法**：GET, POST, PUT, DELETE
+
+#### 响应格式
+```json
+{
+  "code": 200,
+  "message": "success",
+  "data": {}
+}
+```
+
+### 核心接口
+
+#### 用户模块
+- `POST /user/register`：用户注册
+- `POST /user/login`：用户登录
+- `PUT /user/update`：更新用户信息
+- `GET /user/info/{id}`：获取用户信息
+- `PUT /user/target`：设置目标院校专业
+- `GET /user/target/{id}`：获取目标详情
+
+#### 院校模块
+- `GET /school/list`：院校列表（分页、筛选）
+- `GET /school/{id}`：院校详情
+- `GET /school/search`：院校搜索
+
+#### 专业模块
+- `GET /major/list`：专业列表
+- `GET /major/{id}`：专业详情
+- `GET /major/school/{schoolName}`：按院校查询专业
+- `GET /major/search`：专业搜索
+
+#### 资讯模块
+- `GET /info/mixed/list`：混合资讯列表
+- `GET /brochure/list`：招生简章列表
+- `GET /information/list`：校园资讯列表
+- `GET /adjust/list`：调剂通知列表
+
+#### 学习模块
+- `GET /todo/list`：任务列表
+- `POST /todo/add`：添加任务
+- `PUT /todo/update`：更新任务
+- `DELETE /todo/delete/{id}`：删除任务
+- `GET /study/stats`：学习统计
+- `POST /study/record`：添加学习记录
+
+#### 收藏模块
+- `GET /favorite/list`：收藏列表
+- `GET /favorite/count`：收藏数量统计
+- `POST /favorite/add`：添加收藏
+- `GET /favorite/remove`：取消收藏
+
+#### AI 模块
+- `POST /ai/chat`：AI 对话（流式响应）
+
+---
+
+## 🤖 AI 集成方案
+
+### AI 服务提供商
+- **火山引擎 Doubao**：字节跳动大语言模型
+
+### 集成框架
+- **LangChain4j**：Java AI 应用开发框架
+  - 统一的 AI 模型接口
+  - 流式响应支持
+  - 对话历史管理
+
+### 实现方式
+
+#### 后端实现
+```java
+// 使用 LangChain4j 集成火山引擎
+StreamingChatLanguageModel model = VolcEngineChatModel.builder()
+    .apiKey(apiKey)
+    .modelName("doubao-pro-32k")
+    .build();
+
+// 流式响应
+model.generate(messages, new StreamingResponseHandler<>() {
+    @Override
+    public void onNext(String token) {
+        // 发送 SSE 事件
+        emitter.send(token);
+    }
+});
+```
+
+#### 前端实现
+```javascript
+// SSE 流式接收
+const eventSource = new EventSource(url);
+eventSource.onmessage = (event) => {
+    // 逐字显示 AI 回复
+    aiMessage += event.data;
+};
+```
+
+### 功能特性
+- **流式响应**：逐字显示，提升用户体验
+- **上下文管理**：支持多轮对话
+- **Markdown 渲染**：支持富文本格式
+- **错误处理**：网络异常和超时处理
+
+---
+
+## 📦 项目结构
+
+### 前端目录结构
+```
+GradMate_Uniapp/
+├── pages/                  # 页面目录
+│   ├── ai/                # AI 模块
+│   ├── index/             # 首页
+│   ├── info/              # 资讯模块
+│   ├── login/             # 登录注册
+│   ├── major/             # 专业模块
+│   ├── profile/           # 个人中心
+│   ├── school/            # 院校模块
+│   └── study/             # 学习模块
+├── components/            # 组件目录
+│   ├── Countdown.vue      # 倒计时组件
+│   └── MarkdownText.vue   # Markdown 渲染组件
+├── static/                # 静态资源
+│   ├── logo.png          # 应用 logo
+│   └── icons/            # 图标资源
+├── utils/                 # 工具类
+│   └── request.js        # 网络请求封装
+├── App.vue               # 应用入口
+├── main.js               # 主入口文件
+├── manifest.json         # 应用配置
+├── pages.json            # 页面配置
+└── uni.scss              # 全局样式
+```
+
+### 后端目录结构
+```
+GradMate_SpringBoot/
+├── src/main/java/com/gradmate/
+│   ├── controller/        # 控制器层
+│   │   ├── UserController.java
+│   │   ├── SchoolController.java
+│   │   ├── MajorController.java
+│   │   ├── TodoController.java
+│   │   ├── StudyController.java
+│   │   ├── FavoriteController.java
+│   │   └── AiController.java
+│   ├── service/           # 服务层
+│   │   ├── UserService.java
+│   │   ├── SchoolService.java
+│   │   ├── MajorService.java
+│   │   └── ...
+│   ├── mapper/            # 数据访问层
+│   │   ├── UserMapper.java
+│   │   ├── SchoolMapper.java
+│   │   └── ...
+│   ├── entity/            # 实体类
+│   │   ├── User.java
+│   │   ├── School.java
+│   │   └── ...
+│   └── config/            # 配置类
+│       └── CorsConfig.java
+├── src/main/resources/
+│   ├── application.yml    # 应用配置
+│   └── mapper/            # MyBatis XML
+└── pom.xml               # Maven 配置
+```
+
+---
+
+## 🔒 安全设计
+
+### 前端安全
+- **数据加密**：敏感数据本地加密存储
+- **HTTPS**：生产环境使用 HTTPS 协议
+- **输入验证**：前端表单验证
+- **XSS 防护**：输入内容转义
+
+### 后端安全
+- **密码加密**：使用 BCrypt 加密存储
+- **SQL 注入防护**：MyBatis Plus 参数化查询
+- **CORS 配置**：跨域请求控制
+- **接口鉴权**：Token 验证（规划中）
+
+---
+
+## 🚀 部署方案
+
+### 前端部署
+
+#### 微信小程序
+1. 使用 HBuilderX 编译为微信小程序
+2. 上传至微信开发者工具
+3. 提交审核发布
+
+#### H5
+1. 编译为 H5 项目
+2. 部署到 Web 服务器（Nginx/Apache）
+3. 配置域名和 HTTPS
+
+#### APP
+1. 使用 HBuilderX 云打包
+2. 生成 iOS/Android 安装包
+3. 发布到应用商店
+
+### 后端部署
+
+#### 开发环境
+- 本地运行：`mvn spring-boot:run`
+- 端口：9090
+
+#### 生产环境
+1. 打包：`mvn clean package`
+2. 部署到服务器
+3. 使用 Nginx 反向代理
+4. 配置 HTTPS 证书
+
+### 数据库部署
+- MySQL 8.x 服务器
+- 定期备份
+- 主从复制（规划中）
+
+---
+
+## 📊 性能优化
+
+### 前端优化
+- **图片优化**：压缩图片，使用 WebP 格式
+- **懒加载**：列表数据分页加载
+- **缓存策略**：本地存储常用数据
+- **代码分割**：按需加载页面
+
+### 后端优化
+- **数据库索引**：关键字段建立索引
+- **分页查询**：大数据量分页返回
+- **缓存机制**：Redis 缓存（规划中）
+- **连接池**：数据库连接池优化
+
+### 网络优化
+- **接口合并**：减少请求次数
+- **数据压缩**：Gzip 压缩
+- **CDN 加速**：静态资源 CDN（规划中）
+
+---
+
+## 🧪 测试方案
+
+### 前端测试
+- **功能测试**：手动测试各功能模块
+- **兼容性测试**：多平台测试
+- **性能测试**：页面加载速度测试
+
+### 后端测试
+- **单元测试**：JUnit 单元测试
+- **接口测试**：Postman/Apifox 接口测试
+- **压力测试**：JMeter 压力测试（规划中）
+
+---
+
+## 📈 监控与日志
+
+### 日志系统
+- **Slf4j + Logback**：日志框架
+- **日志级别**：DEBUG, INFO, WARN, ERROR
+- **日志文件**：按日期滚动
+
+### 监控方案（规划中）
+- **应用监控**：Spring Boot Actuator
+- **性能监控**：Prometheus + Grafana
+- **错误追踪**：Sentry
+
+---
+
+## 🔄 版本控制
+
+### Git 工作流
+- **主分支**：main
+- **开发分支**：develop
+- **功能分支**：feature/*
+- **修复分支**：hotfix/*
+
+### 提交规范
+- `feat`: 新功能
+- `fix`: 修复 bug
+- `docs`: 文档更新
+- `style`: 代码格式调整
+- `refactor`: 代码重构
+- `test`: 测试相关
+- `chore`: 构建/工具相关
+
+---
+
+## 🛠️ 开发工具
+
+### 前端开发
+- **HBuilderX**：uni-app 官方 IDE
+- **VS Code**：代码编辑器
+- **微信开发者工具**：小程序调试
+
+### 后端开发
+- **IntelliJ IDEA**：Java IDE
+- **Postman/Apifox**：接口测试工具
+- **Navicat**：数据库管理工具
+
+### 协作工具
+- **Git**：版本控制
+- **GitHub/Gitee**：代码托管
+- **Markdown**：文档编写
+
+---
+
+## 📚 技术文档
+
+### 官方文档
+- [uni-app 官方文档](https://uniapp.dcloud.net.cn/)
+- [Vue 3 官方文档](https://cn.vuejs.org/)
+- [Spring Boot 官方文档](https://spring.io/projects/spring-boot)
+- [MyBatis Plus 官方文档](https://baomidou.com/)
+- [LangChain4j 官方文档](https://docs.langchain4j.dev/)
+
+### 参考资料
+- [火山引擎 Doubao 文档](https://www.volcengine.com/docs/82379)
+- [MySQL 官方文档](https://dev.mysql.com/doc/)
+- [Hutool 官方文档](https://hutool.cn/)
+
+---
+
+## 🎯 技术选型理由
+
+### 前端选型
+- **uni-app**：一套代码，多端运行，降低开发成本
+- **Vue 3**：性能优秀，生态完善，学习曲线平缓
+- **Composition API**：代码组织更灵活，逻辑复用更方便
+
+### 后端选型
+- **Spring Boot**：快速开发，约定优于配置，生态成熟
+- **MyBatis Plus**：简化 CRUD 操作，提高开发效率
+- **MySQL**：成熟稳定，性能优秀，社区活跃
+- **LangChain4j**：统一 AI 接口，简化 AI 集成
+
+### AI 选型
+- **火山引擎 Doubao**：国内服务，响应快速，价格合理
+
+---
+
+## 🔮 技术演进规划
+
+### 短期规划
+- [ ] 引入 Redis 缓存
+- [ ] 实现 JWT 认证
+- [ ] 添加接口限流
+- [ ] 完善单元测试
+
+### 中期规划
+- [ ] 引入消息队列（RabbitMQ/Kafka）
+- [ ] 实现微服务架构
+- [ ] 添加 ElasticSearch 搜索
+- [ ] 实现实时通知（WebSocket）
+
+### 长期规划
+- [ ] 容器化部署（Docker/K8s）
+- [ ] 服务网格（Service Mesh）
+- [ ] 大数据分析平台
+- [ ] AI 模型私有化部署
+
+---
+

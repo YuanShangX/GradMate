@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "研小伴",
+  "navigationStyle": "custom",
+  "usingComponents": {
+    "markdown-text": "../../components/MarkdownText"
+  }
+}

@@ -1,0 +1,226 @@
+
+.page.data-v-28f4d9c7 {
+	min-height: 100vh;
+	background: #f5f9ff;
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	overflow-x: hidden;
+}
+.navbar.data-v-28f4d9c7 {
+	background: #ffffff;
+	padding: 20rpx 30rpx;
+	padding-top: calc(20rpx + env(safe-area-inset-top));
+	display: flex;
+	align-items: center;
+	box-shadow: 0 2rpx 8rpx rgba(0, 0, 0, 0.05);
+	width: 100%;
+	box-sizing: border-box;
+}
+.nav-back.data-v-28f4d9c7 {
+	width: 48rpx;
+	height: 48rpx;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.back-icon.data-v-28f4d9c7 {
+	width: 20rpx;
+	height: 20rpx;
+	border-left: 3rpx solid #333;
+	border-bottom: 3rpx solid #333;
+	transform: rotate(45deg);
+}
+.nav-title.data-v-28f4d9c7 {
+	flex: 1;
+	text-align: center;
+	font-size: 32rpx;
+	font-weight: 600;
+	color: #333;
+	margin-right: 48rpx;
+}
+.content.data-v-28f4d9c7 {
+	flex: 1;
+	padding: 20rpx 30rpx;
+	box-sizing: border-box;
+	width: 100%;
+}
+.compare-container.data-v-28f4d9c7 {
+	padding-bottom: 40rpx;
+	max-width: 100%;
+	box-sizing: border-box;
+}
+.school-cards.data-v-28f4d9c7 {
+	display: flex;
+	gap: 20rpx;
+	margin-bottom: 30rpx;
+	max-width: 100%;
+	box-sizing: border-box;
+}
+.school-card.data-v-28f4d9c7 {
+	flex: 1;
+	background: #ffffff;
+	border-radius: 16rpx;
+	padding: 30rpx 20rpx;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 16rpx;
+	box-shadow: 0 2rpx 12rpx rgba(0, 0, 0, 0.05);
+	box-sizing: border-box;
+	max-width: 100%;
+}
+.school-logo.data-v-28f4d9c7 {
+	width: 80rpx;
+	height: 80rpx;
+	border-radius: 50%;
+}
+.school-logo-placeholder.data-v-28f4d9c7 {
+	width: 80rpx;
+	height: 80rpx;
+	border-radius: 50%;
+	background: linear-gradient(135deg, #e0f6ff 0%, #d4e6ff 100%);
+}
+.school-name.data-v-28f4d9c7 {
+	font-size: 26rpx;
+	font-weight: 600;
+	color: #333;
+	text-align: center;
+	line-height: 1.4;
+	word-wrap: break-word;
+	max-width: 100%;
+}
+.compare-table.data-v-28f4d9c7 {
+	background: #ffffff;
+	border-radius: 16rpx;
+	overflow: hidden;
+	margin-bottom: 30rpx;
+	max-width: 100%;
+	box-sizing: border-box;
+}
+.compare-row.data-v-28f4d9c7 {
+	display: flex;
+	border-bottom: 1rpx solid #f0f0f0;
+	box-sizing: border-box;
+	max-width: 100%;
+}
+.compare-row.data-v-28f4d9c7:last-child {
+	border-bottom: none;
+}
+.row-label.data-v-28f4d9c7 {
+	width: 160rpx;
+	padding: 30rpx 20rpx;
+	font-size: 26rpx;
+	font-weight: 600;
+	color: #666;
+	background: #f8f9fa;
+	display: flex;
+	align-items: center;
+	box-sizing: border-box;
+	word-wrap: break-word;
+	flex-shrink: 0;
+}
+.row-values.data-v-28f4d9c7 {
+	flex: 1;
+	display: flex;
+	box-sizing: border-box;
+	max-width: calc(100% - 160rpx);
+}
+.row-value.data-v-28f4d9c7 {
+	flex: 1;
+	padding: 30rpx 20rpx;
+	font-size: 26rpx;
+	color: #333;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	border-left: 1rpx solid #f0f0f0;
+	box-sizing: border-box;
+	word-wrap: break-word;
+	max-width: 100%;
+}
+.tags.data-v-28f4d9c7 {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 8rpx;
+	justify-content: center;
+}
+.tag.data-v-28f4d9c7 {
+	padding: 6rpx 16rpx;
+	border-radius: 8rpx;
+	font-size: 22rpx;
+	font-weight: 500;
+}
+.tag-syl.data-v-28f4d9c7 {
+	background: #ffefdf;
+	color: #ff8c00;
+}
+.tag-211.data-v-28f4d9c7 {
+	background: #eafff3;
+	color: #00c853;
+}
+.tag-zhx.data-v-28f4d9c7 {
+	background: #e0f6ff;
+	color: #00c6ef;
+}
+.analysis-card.data-v-28f4d9c7 {
+	background: linear-gradient(135deg, #e8f4ff 0%, #f5f9ff 100%);
+	border-radius: 16rpx;
+	padding: 30rpx;
+	box-sizing: border-box;
+	max-width: 100%;
+}
+.analysis-header.data-v-28f4d9c7 {
+	display: flex;
+	align-items: center;
+	gap: 12rpx;
+	margin-bottom: 20rpx;
+}
+.ai-icon.data-v-28f4d9c7 {
+	width: 32rpx;
+	height: 32rpx;
+	background: linear-gradient(135deg, #5b8ff9 0%, #378cff 100%);
+	border-radius: 6rpx;
+	position: relative;
+}
+.ai-icon.data-v-28f4d9c7::before {
+	content: '';
+	position: absolute;
+	width: 8rpx;
+	height: 8rpx;
+	background: #ffffff;
+	border-radius: 50%;
+	top: 8rpx;
+	left: 6rpx;
+}
+.ai-icon.data-v-28f4d9c7::after {
+	content: '';
+	position: absolute;
+	width: 8rpx;
+	height: 8rpx;
+	background: #ffffff;
+	border-radius: 50%;
+	top: 8rpx;
+	right: 6rpx;
+}
+.analysis-title.data-v-28f4d9c7 {
+	font-size: 28rpx;
+	font-weight: 600;
+	color: #333;
+}
+.analysis-content.data-v-28f4d9c7 {
+	font-size: 26rpx;
+	color: #666;
+	line-height: 1.8;
+	word-wrap: break-word;
+	max-width: 100%;
+}
+.empty-state.data-v-28f4d9c7 {
+	padding: 200rpx 0;
+	text-align: center;
+}
+.empty-text.data-v-28f4d9c7 {
+	font-size: 28rpx;
+	color: #999;
+}

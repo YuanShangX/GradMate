@@ -1,0 +1,212 @@
+{
+    "pages" : [
+        {
+            "path" : "pages/login/login",
+            "style" : {
+                "navigationBarTitleText" : "登录",
+                "navigationStyle" : "custom"
+            }
+        },
+        {
+            "path" : "pages/school/index",
+            "style" : {
+                "navigationBarTitleText" : "校院库",
+                "navigationStyle" : "custom"
+            }
+        },
+        {
+            "path" : "pages/school/search",
+            "style" : {
+                "navigationBarTitleText" : "搜索",
+                "navigationStyle" : "custom"
+            }
+        },
+        {
+            "path" : "pages/school/calendar",
+            "style" : {
+                "navigationBarTitleText" : "考研日历",
+                "navigationStyle" : "custom"
+            }
+        },
+        {
+            "path" : "pages/school/list",
+            "style" : {
+                "navigationBarTitleText" : "找院校",
+                "navigationStyle" : "custom"
+            }
+        },
+        {
+            "path" : "pages/school/detail",
+            "style" : {
+                "navigationBarTitleText" : "院校详情",
+                "navigationStyle" : "custom"
+            }
+        },
+        {
+            "path" : "pages/school/assistant",
+            "style" : {
+                "navigationBarTitleText" : "智能择校助手",
+                "navigationStyle" : "custom"
+            }
+        },
+        {
+            "path" : "pages/school/compare",
+            "style" : {
+                "navigationBarTitleText" : "院校对比",
+                "navigationStyle" : "custom"
+            }
+        },
+        {
+            "path" : "pages/school/select",
+            "style" : {
+                "navigationBarTitleText" : "选择对比院校",
+                "navigationStyle" : "custom"
+            }
+        },
+        {
+            "path" : "pages/major/search",
+            "style" : {
+                "navigationBarTitleText" : "找专业",
+                "navigationStyle" : "custom"
+            }
+        },
+        {
+            "path" : "pages/major/detail",
+            "style" : {
+                "navigationBarTitleText" : "专业详情",
+                "navigationStyle" : "custom"
+            }
+        },
+        {
+            "path" : "pages/major/schoolDetail",
+            "style" : {
+                "navigationBarTitleText" : "专业招生信息",
+                "navigationStyle" : "custom"
+            }
+        },
+        {
+            "path" : "pages/major/compare",
+            "style" : {
+                "navigationBarTitleText" : "专业对比",
+                "navigationStyle" : "custom"
+            }
+        },
+        {
+            "path" : "pages/major/select",
+            "style" : {
+                "navigationBarTitleText" : "选择对比专业",
+                "navigationStyle" : "custom"
+            }
+        },
+        {
+            "path" : "pages/info/index",
+            "style" : {
+                "navigationBarTitleText" : "院校资讯",
+                "navigationStyle" : "custom"
+            }
+        },
+        {
+            "path" : "pages/study/tasklist",
+            "style" : {
+                "navigationBarTitleText" : "ToDo清单",
+                "navigationStyle" : "custom"
+            }
+        },
+        {
+            "path" : "pages/study/calendar",
+            "style" : {
+                "navigationStyle" : "custom"
+            }
+        },
+        {
+            "path" : "pages/study/stats",
+            "style" : {
+                "navigationBarTitleText" : "统计数据",
+                "navigationStyle" : "custom"
+            }
+        },
+        {
+            "path" : "pages/study/record",
+            "style" : {
+                "navigationBarTitleText" : "学习记录",
+                "navigationStyle" : "custom"
+            }
+        },
+        {
+            "path" : "pages/study/focus",
+            "style" : {
+                "navigationStyle" : "custom",
+                "navigationBarTextStyle" : "white"
+            }
+        },
+        {
+            "path" : "pages/ai/chat",
+            "style" : {
+                "navigationBarTitleText" : "研小伴",
+                "navigationStyle" : "custom"
+            }
+        },
+        {
+            "path" : "pages/profile/profile",
+            "style" : {
+                "navigationBarTitleText" : "个人中心",
+                "navigationStyle" : "custom"
+            }
+        },
+        {
+            "path" : "pages/profile/edit",
+            "style" : {
+                "navigationBarTitleText" : "编辑资料",
+                "navigationStyle" : "custom"
+            }
+        },
+        {
+            "path" : "pages/profile/target",
+            "style" : {
+                "navigationBarTitleText" : "设置目标",
+                "navigationStyle" : "custom"
+            }
+        },
+        {
+            "path" : "pages/profile/favorite",
+            "style" : {
+                "navigationBarTitleText" : "我的收藏",
+                "navigationStyle" : "custom"
+            }
+        }
+    ],
+    "globalStyle" : {
+        "navigationBarTextStyle" : "white",
+        "navigationBarTitleText" : "GradMate考研助手",
+        "navigationBarBackgroundColor" : "#4A90E2",
+        "backgroundColor" : "#F5F5F5"
+    },
+    "tabBar" : {
+        "color" : "#7A7E83",
+        "selectedColor" : "#4A90E2",
+        "borderStyle" : "black",
+        "backgroundColor" : "#FFFFFF",
+        "fontSize" : "14px",
+        "iconWidth" : "0px",
+        "height" : "50px",
+        "list" : [
+            {
+                "pagePath" : "pages/school/index",
+                "text" : "校院库"
+            },
+            {
+                "pagePath" : "pages/study/tasklist",
+                "text" : "ToDo清单"
+            },
+            {
+                "pagePath" : "pages/ai/chat",
+                "text" : "研小伴"
+            },
+            {
+                "pagePath" : "pages/profile/profile",
+                "text" : "个人中心"
+            }
+        ]
+    },
+    "uniIdRouter" : {}
+}
